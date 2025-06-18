@@ -183,6 +183,8 @@ cython_debug/
 # Ruff stuff:
 .ruff_cache/
 
+rag_chat_local/config.yaml
+
 # PyPI configuration file
 .pypirc
 
