@@ -242,5 +242,4 @@ gradio_cached_examples/
 # Logs
 *.log
 
-# YAML config secrets (optional, if you want to keep config private)
 rag_chat_local/config.yaml
