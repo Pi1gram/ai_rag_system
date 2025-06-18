@@ -1,0 +1,6 @@
+chromadb
+llama-cpp-python
+gradio
+pyyaml
+azure-search-documents
+pypdf

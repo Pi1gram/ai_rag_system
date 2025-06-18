@@ -194,3 +194,53 @@ rag_chat_local/config.yaml
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VSCode settings
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Model and data artifacts
+*.bin
+*.gguf
+*.ggml
+*.ckpt
+*.pth
+*.pt
+*.h5
+*.onnx
+
+# Chroma DB
+rag_chat_local/chroma_db/
+rag_chat_local/chroma_db/*
+
+# HuggingFace cache
+rag_chat_local/models/.cache/
+rag_chat_local/models/.cache/*
+
+# Local data
+rag_chat_local/data/*.pdf
+rag_chat_local/data/*.txt
+
+# Gradio cache
+gradio_cached_examples/
+
+# Logs
+*.log
+
+# YAML config secrets (optional, if you want to keep config private)
+# rag_chat_local/config.yaml
