@@ -10,3 +10,7 @@ google-generativeai
 openai
 pdfplumber
 tqdm
+python-docx
+python-pptx
+plotly
+scikit-learn

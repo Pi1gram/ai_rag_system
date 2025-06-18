@@ -1,0 +1,137 @@
+# RAG Chat Local
+
+A Retrieval-Augmented Generation (RAG) chatbot system that supports local and cloud LLMs, document ingestion, and semantic search.  
+Built with Python, Gradio, ChromaDB, Gemini API, and more.
+
+---
+
+## Features
+
+- **Document Ingestion:** Supports `.txt`, `.md`, and `.pdf` files.
+- **Semantic Search:** Uses ChromaDB for local vector search.
+- **LLM Integration:** 
+  - **Gemini API** (Google Generative AI, recommended for low-RAM systems)
+  - **Llama (local, via llama-cpp-python)** (for users with sufficient RAM)
+  - **Azure OpenAI** (optional)
+- **Gradio UI:** Simple web chat interface.
+- **Configurable:** All settings via `config.yaml`.
+
+---
+
+## Quickstart
+
+### 1. Clone and Install
+
+```sh
+git clone <https://github.com/Pi1gram/ai_rag_system>
+cd rag_sys/rag_chat_local
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### 2. Configure
+
+Edit `config.yaml`:
+
+```yaml
+use_gemini: true                # Use Gemini API (recommended for low RAM)
+use_azure_openai: false         # Set true to use Azure OpenAI
+data_folder: "./data"           # Folder for your documents
+gemini_api_key: "<YOUR_GEMINI_API_KEY>"  # Required if using Gemini
+# local_llm_model_path: "./models/llama-2-7b-chat.Q4_K_M.gguf"  # For local Llama
+```
+
+### 3. Add Documents
+
+Put your `.txt`, `.md`, or `.pdf` files in the `data/` folder.
+
+---
+
+### 4. Ingest Documents
+
+```sh
+python src/app.py --ingest
+```
+
+---
+
+### 5. Run the Chatbot
+
+```sh
+python src/app.py
+```
+
+Open the Gradio link in your browser (usually http://127.0.0.1:7860).
+
+---
+
+## File Structure
+
+```
+rag_sys/
+├── rag_chat_local/
+│   ├── src/
+│   │   ├── app.py
+│   │   ├── config.py
+│   │   ├── ingest.py
+│   │   ├── llm_service.py
+│   │   └── search_service.py
+│   ├── data/
+│   ├── models/
+│   ├── chroma_db/
+│   ├── requirements.txt
+│   └── config.yaml
+├── readme
+└── .gitignore
+```
+
+---
+
+## Requirements
+
+See `requirements.txt` for all dependencies, including:
+
+- chromadb
+- llama-cpp-python
+- gradio
+- pyyaml
+- azure-search-documents
+- azure-identity
+- pypdf
+- sentence-transformers
+- google-generativeai
+- openai
+- pdfplumber
+- tqdm
+
+---
+
+## Notes
+
+- **Gemini API** is recommended for users with limited RAM.
+- **Local Llama** requires downloading a GGUF model and sufficient system memory.
+- **Azure/OpenAI** support is available if you have credentials.
+
+---
+
+## Security
+
+**Never commit API keys or secrets to your repository.**  
+Use environment variables or keep `config.yaml` out of version control.
+
+---
+
+## License
+
+MIT (or your chosen license)
+
+---
+
+## Credits
+
+- [ChromaDB](https://www.trychroma.com/)
+- [Google Generative AI (Gemini)](https://ai.google.dev/)
+- [llama-cpp-python](https://github.com/abetlen/llama-cpp-python)
+- [Gradio](https://gradio.app/)
+- [Sentence Transformers](https://www.sbert.net/)
