@@ -3,4 +3,10 @@ llama-cpp-python
 gradio
 pyyaml
 azure-search-documents
+azure-identity
 pypdf
+sentence-transformers
+google-generativeai
+openai
+pdfplumber
+tqdm
